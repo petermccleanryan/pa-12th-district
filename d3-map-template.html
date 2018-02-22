@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cartogram: Municipalities of the canton of Bern</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="foundation.min.css">
+    <style type="text/css">
+
+      body.updating {
+        cursor: wait;
+      }
+
+      #status, div.footer {
+        color: #999;
+        font-size: 0.8em;
+      }
+
+      #map-container {
+        border: 1px solid silver;
+        position: relative;
+      }
+
+      #map {
+        background: #fff;
+      }
+
+      path.mapFeature {
+        stroke-width: 1;
+      }
+
+      path.mapFeature:hover {
+        stroke: #000;
+        opacity: 0.8;
+      }
+
+      div.ttip {
+        color: #222;
+        background: #fff;
+        padding: .5em;
+        text-shadow: #f5f5f5 0 1px 0;
+        border-radius: 2px;
+        box-shadow: 0px 0px 2px 0px #a6a6a6;
+        opacity: 0.9;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      div.footer {
+        border-top: 1px solid silver;
+        margin-top: 20px;
+        text-align: right;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="container" class="row">
+      <div class="column">
+        <h1>Cartogram: Number of Registered Democrats in the New 12th PA Congressional District</h1>
+        <form>
+          <input type="checkbox" id="scale" value="population"/><label for="scale">Activate Cartogram</label>
+          <span id="status"></span>
+        </form>
+      </div>
+      <div class="column">
+        <div id="map-container">
+          <svg id="map"></svg>
+        </div>
+      </div>
+      <div class="column">
+        <p>
+          Description Here if ya want.
+        </p>
+        <dl>
+          <dt>Code</dt>
+          <dd>The <a href="map.js">code for this map</a> is heavily inspired by the <a href="http://prag.ma/code/d3-cartogram/">d3-cartogram example</a>. The map is built with <a href="https://github.com/shawnbot/d3-cartogram/">d3-cartogram</a> and <a href="http://d3js.org/">D3.js</a> using <a href="https://github.com/mbostock/topojson">topojson</a>. Client interaction with <a href="https://jquery.com/">jQuery</a>, styling by <a href="http://foundation.zurb.com/">Foundation</a> and map colors by <a href="http://colorbrewer2.org/">ColorBrewer</a></dd>
+          <dt>Data source</dt>
+          <dd>Marc For PA .
+          </dd>
+        </dl>
+        <p>&nbsp;</p>
+      </div>
+      <div class="column">
+        <div class="footer">
+          Peter Ryan
+        </div>
+      </div>
+    </div>
+    <script src="d3.v3.min.js"></script>
+    <script src="colorbrewer.js"></script>
+    <script src="topojson.js"></script>
+    <script src="cartogram.js"></script>
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <script src="map.js" type="text/javascript"></script>
+  </body>
+</html>
